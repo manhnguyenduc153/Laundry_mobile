@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'stores_screen.dart';
 import 'orders_screen.dart';
-import 'contact_screen.dart';
+import 'ai_analysis_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -17,8 +17,8 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const StoresScreen(),
+    const AIAnalysisScreen(),
     const OrdersScreen(),
-    const ContactScreen(),
   ];
 
   @override
@@ -40,14 +40,14 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Tiệm giặt',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.auto_awesome_outlined),
+            activeIcon: Icon(Icons.auto_awesome),
+            label: 'AI',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.receipt_long_outlined),
             activeIcon: Icon(Icons.receipt_long),
             label: 'Đơn hàng',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.contact_mail_outlined),
-            activeIcon: Icon(Icons.contact_mail),
-            label: 'Đặt dịch vụ',
           ),
         ],
       ),
