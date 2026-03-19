@@ -31,6 +31,11 @@ class ApiService {
     return null;
   }
 
+  static Future<void> logout() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+  }
+
   static Future<bool> register(String username, String password) async {
     try {
       final response = await http.post(
